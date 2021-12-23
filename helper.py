@@ -1,6 +1,6 @@
 from urlextract import URLExtract
 from wordcloud import WordCloud
-import nltk
+nltk.download('english')
 from nltk.corpus import stopwords
 from collections import Counter
 import pandas as pd

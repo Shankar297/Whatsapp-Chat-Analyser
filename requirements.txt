@@ -6,4 +6,3 @@ wordcloud
 pandas
 emoji
 nltk
-python3 -m nltk.downloader stopwords
