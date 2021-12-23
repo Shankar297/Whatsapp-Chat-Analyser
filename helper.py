@@ -1,7 +1,5 @@
 from urlextract import URLExtract
 from wordcloud import WordCloud
-nltk.download('english')
-from nltk.corpus import stopwords
 from collections import Counter
 import pandas as pd
 import emoji
@@ -39,14 +37,9 @@ def most_busy_users(df):
 
 def create_word_cloud(selected_user, df):
 
-    stopwords_eng = stopwords.words('english')
-
     f = open('stop_hinglish.txt',encoding='utf-8')
     stop_words_hing = f.read()
-
-    for word in stop_words_hing:
-        stopwords_eng.extend(word)
-
+    print(stop_words_hing)
     if selected_user != 'Overall':
         df = df[df['user']==selected_user]
     
@@ -56,7 +49,7 @@ def create_word_cloud(selected_user, df):
     def remove_stopwords(message):
         y = []
         for word in message.lower().split():
-            if word not in stopwords_eng:
+            if word not in stop_words_hing:
                 y.append(word)
         return " ".join(y)
 
