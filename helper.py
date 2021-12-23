@@ -5,7 +5,7 @@ from nltk.corpus import stopwords
 from collections import Counter
 import pandas as pd
 import emoji
-nltk.download('english')
+
 
 extracter = URLExtract()
 def fetch_stats(selected_user,df):
